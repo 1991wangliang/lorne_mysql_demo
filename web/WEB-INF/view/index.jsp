@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>lorne_core_demo</title>
+    <title>lorne_mysql_demo</title>
 </head>
 <body>
 
