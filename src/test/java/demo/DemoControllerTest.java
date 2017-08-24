@@ -1,6 +1,7 @@
 package demo;
 
-import net.sf.json.JSONObject;
+
+import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 import test.BaseTest;
 import test.IMapParam;

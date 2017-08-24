@@ -1,8 +1,8 @@
 package test;
 
+import com.alibaba.fastjson.JSONObject;
 import com.lorne.core.framework.utils.encode.MD5Util;
 import com.lorne.core.framework.utils.http.HttpUtils;
-import net.sf.json.JSONObject;
 
 /**
  * Created by yuliang on 2016/7/8.
@@ -56,7 +56,7 @@ public class TokenHolder {
             }
             url += "?sign=" + sign + "&token=" + token;
             String result = HttpUtils.postJson(url, json);
-            JSONObject jsonObject = JSONObject.fromObject(result);
+            JSONObject jsonObject = JSONObject.parseObject(result);
             JSONObject res = jsonObject.getJSONObject("res");
             JSONObject data = res.getJSONObject("data");
             token = data.getString("token");

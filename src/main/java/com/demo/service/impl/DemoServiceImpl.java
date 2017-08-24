@@ -4,8 +4,9 @@ import com.demo.dao.UserDao;
 import com.demo.entity.User;
 import com.demo.service.DemoService;
 import com.lorne.core.framework.exception.ServiceException;
+import com.lorne.core.framework.utils.JsonUtils;
 import com.lorne.core.framework.utils.TokenUtils;
-import com.lorne.core.framework.utils.json.JsonUtils;
+
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

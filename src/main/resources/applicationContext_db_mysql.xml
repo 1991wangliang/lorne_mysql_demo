@@ -58,6 +58,10 @@
         </property>
     </bean>
 
+    <bean id="jdbcTemplateProxy" class="com.lorne.mysql.framework.dao.impl.JdbcTemplateProxy">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
     <!-- druid spring监控 -->
     <bean id="druid-stat-interceptor"
           class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">

@@ -1,10 +1,11 @@
 package test;
 
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.lorne.core.framework.utils.encode.MD5Util;
 import com.lorne.core.framework.utils.http.HttpUtils;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
+
 import org.junit.Assert;
 import org.junit.Before;
 
@@ -56,15 +57,15 @@ public class BaseTest {
             long end = System.currentTimeMillis();
             System.out.println("执行时间(毫秒):" + (end - start));
             System.out.println(result);
-            JSONObject jsonObject = JSONObject.fromObject(result);
-            int state = jsonObject.getInt("state");
+            JSONObject jsonObject = JSONObject.parseObject(result);
+            int state = jsonObject.getInteger("state");
             Assert.assertEquals(state, 1);
             JSONObject res = jsonObject.getJSONObject("res");
             Object data = res.get("data");
             if (data instanceof JSONObject) {
                 JsonResult<Map<String, Object>> mdata = new JsonResult<Map<String, Object>>();
 
-                mdata.setCode(res.getInt("code"));
+                mdata.setCode(res.getInteger("code"));
                 mdata.setMsg(res.getString("msg"));
 
                 Map<String, Object> map = (Map<String, Object>) data;
@@ -76,7 +77,7 @@ public class BaseTest {
             } else if (data instanceof JSONArray) {
                 JsonResult<List<Map<String, Object>>> mdata = new JsonResult<List<Map<String, Object>>>();
                 List<Map<String, Object>> list = (List<Map<String, Object>>) data;
-                mdata.setCode(res.getInt("code"));
+                mdata.setCode(res.getInteger("code"));
                 mdata.setMsg(res.getString("msg"));
 
                 Assert.assertNotNull(list);
@@ -87,7 +88,7 @@ public class BaseTest {
             }else if(data instanceof Boolean){
                 JsonResult<Boolean> mdata = new JsonResult<Boolean>();
                 Boolean bool = (Boolean) data;
-                mdata.setCode(res.getInt("code"));
+                mdata.setCode(res.getInteger("code"));
                 mdata.setMsg(res.getString("msg"));
                 Assert.assertNotNull(bool);
                 mdata.setData(bool);

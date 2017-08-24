@@ -16,7 +16,7 @@
 
     <groupId>lorne_mysql_demo</groupId>
     <artifactId>lorne_mysql_demo</artifactId>
-    <version>1.0.0.RELEASE</version>
+    <version>1.0.1.RELEASE</version>
 
     <properties>
         <org.springframework-version>4.3.7.RELEASE</org.springframework-version>
@@ -49,7 +49,7 @@
         <dependency>
             <groupId>com.lorne.mysql</groupId>
             <artifactId>lorne_mysql</artifactId>
-            <version>1.0.0.RELEASE</version>
+            <version>1.0.1.RELEASE</version>
         </dependency>
 
     </dependencies>
